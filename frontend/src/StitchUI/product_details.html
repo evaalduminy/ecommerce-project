@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detailed Product View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#ffb4a8",
+                        "secondary-fixed": "#ffdad4",
+                        "surface-bright": "#4a3430",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "on-surface-variant": "#e8bcb5",
+                        "on-secondary-container": "#ff9f90",
+                        "tertiary-fixed-dim": "#b5c4ff",
+                        "on-tertiary": "#00297a",
+                        "inverse-surface": "#fedad5",
+                        "primary-container": "#d80000",
+                        "tertiary": "#b5c4ff",
+                        "on-primary": "#690000",
+                        "inverse-on-surface": "#412b28",
+                        "surface-container": "#2e1b17",
+                        "surface-container-low": "#291714",
+                        "inverse-primary": "#c00000",
+                        "on-tertiary-container": "#e9ebff",
+                        "surface": "#200f0c",
+                        "background": "#200f0c",
+                        "surface-dim": "#200f0c",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "outline": "#af8781",
+                        "surface-container-highest": "#452f2c",
+                        "on-tertiary-fixed": "#00174d",
+                        "secondary-container": "#91180e",
+                        "on-tertiary-fixed-variant": "#003dab",
+                        "on-primary-fixed": "#410000",
+                        "secondary-fixed-dim": "#ffb4a8",
+                        "primary-fixed": "#ffdad4",
+                        "primary": "#ffb4a8",
+                        "surface-container-high": "#3a2521",
+                        "on-background": "#fedad5",
+                        "tertiary-container": "#005cfa",
+                        "on-secondary-fixed-variant": "#8d150b",
+                        "on-secondary": "#690000",
+                        "secondary": "#ffb4a8",
+                        "on-primary-container": "#ffe7e3",
+                        "outline-variant": "#5e3f3a",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#1a0a07",
+                        "on-surface": "#fedad5",
+                        "on-primary-fixed-variant": "#930000",
+                        "surface-variant": "#452f2c",
+                        "on-secondary-fixed": "#410000",
+                        "tertiary-fixed": "#dbe1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Epilogue', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-[#291714] shadow-none flex justify-between items-center px-12 h-20 w-full transition-colors duration-300">
+<a class="font-['Epilogue'] text-2xl font-black tracking-tighter text-[#fedad5] scale-95 duration-150 ease-in-out" href="#">
+            CINEMATIC GALLERY
+        </a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Epilogue'] font-bold tracking-tight text-[#e8bcb5] hover:text-[#fedad5] transition-colors duration-300" href="#">Gallery</a>
+<a class="font-['Epilogue'] font-bold tracking-tight text-[#d80000] border-b-2 border-[#d80000] pb-1" href="#">Collections</a>
+<a class="font-['Epilogue'] font-bold tracking-tight text-[#e8bcb5] hover:text-[#fedad5] transition-colors duration-300" href="#">Archive</a>
+<a class="font-['Epilogue'] font-bold tracking-tight text-[#e8bcb5] hover:text-[#fedad5] transition-colors duration-300" href="#">About</a>
+</div>
+<div class="flex items-center gap-6 text-[#d80000]">
+<button class="hover:bg-[#3a2521] transition-colors duration-300 p-2 rounded-full flex items-center justify-center scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined text-2xl">shopping_bag</span>
+</button>
+<button class="hover:bg-[#3a2521] transition-colors duration-300 p-2 rounded-full flex items-center justify-center scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined text-2xl">person</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow pt-32 pb-24 px-6 md:px-12 lg:px-24 w-full max-w-[1920px] mx-auto">
+<!-- Product Hero Section (Asymmetric Layout) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-32 relative">
+<!-- Left: Cinematic Gallery (Spans 7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-8 relative">
+<!-- Main Image -->
+<div class="relative w-full aspect-[3/4] bg-surface-container-low overflow-hidden">
+<img alt="Main product view" class="w-full h-full object-cover" data-alt="High fashion editorial shot of a dark red velvet armchair in a moody dimly lit room with dramatic cinematic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD3BWm_ay_GSf-5dEC9PR0nSjb3Sg8ddJ4vxRQskz4KMKH5HXJ5XbycV2ciPdtn8X9o5HGZwpc-bd7ql6GXChO1z7sMfXY_YjYyIStNEZ8Sy3P5EcGQSFtS_YmY3jU2SY4ii-r9NJ4qfQ7V9ay41hHiXwTY10T_h845iCdx2j5D9fsGEQCsKy0kLGqTMn-tohppnabD3CCBjyr15G_PxaZMlWr1e2YcdC1f8MpN-bZNKP3zq_Tx3Oa7kjF9iHwtLiJ1SgYdry-b1k"/>
+</div>
+<!-- Thumbnail Grid -->
+<div class="grid grid-cols-3 gap-6">
+<div class="aspect-square bg-surface-container-low overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+<img alt="Thumbnail 1" class="w-full h-full object-cover" data-alt="Close up detail shot of rich red velvet fabric texture with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVzAJaATtw_RELB5YHJkyUgvC91whRQP7lPgNHnc8_3XOLsDnb0mvF02mxxhxFnexB2GXErWRX4mVCFuI5tyPLX7sv874oUR7qJVqQcr7IAepxjv1e55MjFKXvQoyUu47S1YrjqdgHZ__C0TjwL_sBs_ojLd6HqJSTSD5kEkUx72v0oRT9-XQegg6qflqC5fWEITemMbQi9Z4NfM1YHIlLWqO7lqKgnLB3l3WCLheXrXpocOK_g4NXUHPu757RhOMAMYJSKyCKxWE"/>
+</div>
+<div class="aspect-square bg-surface-container-low overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+<img alt="Thumbnail 2" class="w-full h-full object-cover" data-alt="Detail shot of dark mahogany wood chair leg against a dark concrete floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPYER1EoHcP3f0s3--RKglzfZvFkxPzkBcX3HQJxoS11yL8D5ubqY6t6ZCkpQ5FWhMY55DOBGoc_J6KlpHqp3ANKK7NOfwK6yjX5gagdyUbFgola1Fl7lOzKDLKNLCwtIwBcXMPMe662yx0CMogbd9v7G72C21S7oxbwGH09peI6Imqc0hJDlHYv3xcSEg8rFqcboFhpxn1v5aZ5lehkFr-K5BADVAVXBDuFbMFdXxS97ZtisBQ1LkW9sspSocQzvWeEzagYNCtsI"/>
+</div>
+<div class="aspect-square bg-surface-container-low overflow-hidden cursor-pointer hover:opacity-80 transition-opacity relative group">
+<img alt="Thumbnail 3" class="w-full h-full object-cover" data-alt="Wide shot of red armchair in corner of empty industrial room with light streaming through window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKMIHzDKfLKkF2tLmZWE1LgliJami2g6GfTOQ1w4cnKVOBVJbslqzY5P2hiTJWvxGdK5jCmBTCCDkTFk9KqM06bsG1Z_RZ8Qn0zVXH6bXAIRuetYDW3R9t3t82Q6pR-cvAl2xAWZBkKi8i41k5ZEvib0_ldWIwZvwv2-P9EELlFJtjAfF0V7zsLJav98F6Sh7tqARigPaSjX9K0fiADHpftrqzZAFt-DBVl87a3cyhcdNMwzn_gwHwSA1poJjuImVwQ10XaOTLbdc"/>
+<div class="absolute inset-0 bg-surface-variant/60 backdrop-blur-[20px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-headline font-bold text-on-surface">+4</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Product Details & Actions (Spans 5 cols) -->
+<div class="lg:col-span-5 flex flex-col sticky top-32 h-fit">
+<div class="mb-8">
+<p class="font-body text-sm font-medium tracking-[0.2em] uppercase text-on-surface-variant mb-4">The Archive Collection</p>
+<h1 class="font-headline text-5xl md:text-6xl font-black text-on-surface leading-tight tracking-tighter mb-6">Crimson Velvet Lounge Chair</h1>
+<p class="font-body text-3xl text-primary-container font-light mb-8">$3,450</p>
+<p class="font-body text-base text-on-surface-variant leading-relaxed">
+                        A masterclass in shadow and texture. Hand-upholstered in dense Italian velvet, this piece is designed to absorb light and command presence. The structural frame is constructed from ebonized oak, hidden beneath the sweeping curves of the seating volume.
+                    </p>
+</div>
+<!-- Selectors -->
+<div class="flex flex-col gap-8 mb-12">
+<!-- Color -->
+<div>
+<span class="font-body text-sm font-bold tracking-wide uppercase text-on-surface block mb-4">Hue</span>
+<div class="flex gap-4">
+<button aria-label="Deep Red" class="w-10 h-10 rounded-full bg-[#5c0000] border-2 border-primary-container shadow-[0px_0px_12px_rgba(216,0,0,0.5)] focus:outline-none"></button>
+<button aria-label="Obsidian Black" class="w-10 h-10 rounded-full bg-[#111111] border border-outline-variant hover:border-on-surface-variant transition-colors focus:outline-none"></button>
+<button aria-label="Charcoal Gray" class="w-10 h-10 rounded-full bg-[#3b444b] border border-outline-variant hover:border-on-surface-variant transition-colors focus:outline-none"></button>
+</div>
+</div>
+<!-- Material -->
+<div>
+<span class="font-body text-sm font-bold tracking-wide uppercase text-on-surface block mb-4">Material Grade</span>
+<div class="flex flex-wrap gap-4">
+<button class="px-6 py-3 bg-primary-container text-on-primary-container font-body text-sm font-medium rounded-md transition-colors">Italian Velvet</button>
+<button class="px-6 py-3 bg-surface-container-highest text-on-surface font-body text-sm font-medium rounded-md hover:bg-surface-container transition-colors">Aniline Leather (+$800)</button>
+</div>
+</div>
+<!-- Quantity -->
+<div>
+<span class="font-body text-sm font-bold tracking-wide uppercase text-on-surface block mb-4">Quantity</span>
+<div class="flex items-center gap-6">
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant text-on-surface-variant hover:text-on-surface hover:border-on-surface transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="font-body text-xl font-medium text-on-surface">1</span>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant text-on-surface-variant hover:text-on-surface hover:border-on-surface transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-4">
+<button class="w-full py-5 bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-headline text-lg font-bold tracking-wide uppercase rounded-sm shadow-[0_24px_48px_-12px_rgba(26,10,7,0.5)] hover:scale-[1.02] transition-transform duration-300">
+                        Acquire Piece
+                    </button>
+<button class="w-full py-5 bg-transparent border border-outline-variant text-on-surface font-headline text-sm font-bold tracking-widest uppercase rounded-sm hover:border-outline hover:bg-surface-container-low transition-colors duration-300 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+                        Save to Archive
+                    </button>
+</div>
+<!-- Detail Rail (Custom Component as per guidelines) -->
+<div class="mt-16 bg-surface-container-low p-8 relative overflow-hidden group">
+<div class="absolute inset-0 bg-surface-variant/10 group-hover:bg-surface-variant/20 transition-colors pointer-events-none"></div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-6 uppercase tracking-wider">Specifications</h3>
+<ul class="flex flex-col gap-4">
+<li class="flex justify-between items-baseline border-b border-outline-variant/30 pb-2">
+<span class="font-body text-sm text-on-surface-variant">Dimensions</span>
+<span class="font-body text-sm text-on-surface font-medium">32"W x 34"D x 28"H</span>
+</li>
+<li class="flex justify-between items-baseline border-b border-outline-variant/30 pb-2">
+<span class="font-body text-sm text-on-surface-variant">Weight</span>
+<span class="font-body text-sm text-on-surface font-medium">85 lbs</span>
+</li>
+<li class="flex justify-between items-baseline border-b border-outline-variant/30 pb-2">
+<span class="font-body text-sm text-on-surface-variant">Origin</span>
+<span class="font-body text-sm text-on-surface font-medium">Milan, Italy</span>
+</li>
+<li class="flex justify-between items-baseline border-b border-outline-variant/30 pb-2">
+<span class="font-body text-sm text-on-surface-variant">Production Time</span>
+<span class="font-body text-sm text-on-surface font-medium">8-10 Weeks</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Spacer / Divider Concept (No Lines) -->
+<div class="w-full h-32 bg-gradient-to-b from-background to-surface-container-low my-16"></div>
+<!-- Reviews Section (Bento Grid Style) -->
+<section class="mb-32">
+<div class="flex justify-between items-end mb-16 px-4">
+<div>
+<h2 class="font-headline text-4xl font-bold text-on-surface tracking-tight mb-2">Curator Notes</h2>
+<p class="font-body text-lg text-on-surface-variant">Impressions from recent collectors.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-headline text-3xl font-bold text-on-surface">4.9</span>
+<span class="font-body text-sm text-on-surface-variant ml-2 uppercase tracking-widest">(24 Notes)</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Review Card 1 -->
+<div class="bg-surface-container-low p-8 hover:bg-surface-container transition-colors duration-300">
+<div class="flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-base text-on-surface leading-relaxed mb-8 italic">"A brooding masterpiece. It completely anchors my studio space. The velvet absorbs light exactly as described."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface font-headline font-bold">EA</div>
+<div>
+<p class="font-body text-sm font-bold text-on-surface uppercase tracking-wide">E. Aalto</p>
+<p class="font-body text-xs text-on-surface-variant">Verified Collector</p>
+</div>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="bg-surface-container-low p-8 hover:bg-surface-container transition-colors duration-300">
+<div class="flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-base text-on-surface leading-relaxed mb-8 italic">"Exceptional craftsmanship. The hidden joints and sweeping curves make it look like a monolithic sculpture rather than mere furniture."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface font-headline font-bold">MR</div>
+<div>
+<p class="font-body text-sm font-bold text-on-surface uppercase tracking-wide">M. Rossi</p>
+<p class="font-body text-xs text-on-surface-variant">Verified Collector</p>
+</div>
+</div>
+</div>
+<!-- Review Card 3 -->
+<div class="bg-surface-container-low p-8 hover:bg-surface-container transition-colors duration-300">
+<div class="flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-base text-on-surface leading-relaxed mb-8 italic">"Visually stunning. Be warned it sits quite low to the ground, but that only adds to its lounge aesthetic. Worth the wait."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface font-headline font-bold">JW</div>
+<div>
+<p class="font-body text-sm font-bold text-on-surface uppercase tracking-wide">J. Wright</p>
+<p class="font-body text-xs text-on-surface-variant">Verified Collector</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="px-8 py-3 bg-transparent border-none text-on-surface font-headline text-sm font-bold tracking-widest uppercase hover:text-primary-container transition-colors duration-300 flex items-center gap-2">
+                    Read All Notes
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Related Products (Asymmetric / No-Line Cards) -->
+<section>
+<h2 class="font-headline text-3xl font-bold text-on-surface tracking-tight mb-16 text-center uppercase">Complementary Pieces</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<!-- Product 1 -->
+<div class="group cursor-pointer">
+<div class="w-full aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden relative">
+<img alt="Related Product 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Modern minimalist black floor lamp against a dark textured wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcpgZdAt1YC3q9KwE5AwlQkNn09f0eTLumu6W3yZQULNQNlbJkGdzsUIRJ_01KwK19a4-6zZKbcf2sqsZ3t_ilKSYBFmipCENyIHOV-K1LxbHrBRslksMkBxEO-d0Jl6hSrl0vBJ8k8QfsxmfVTiI81hqqgdGemHwvgRgB5E0vcwtK_uXc823-1ZqaZ0iPTSS9q0DbGZU9wUm_eEZm62KWW8TdIikVbqAQEMPiFTOL3fD0Obq4oORfD2xyShIy8gVbIOQ23K4gvkU"/>
+<div class="absolute top-4 left-4 bg-surface-container-highest/80 backdrop-blur-md px-3 py-1 font-body text-xs uppercase tracking-wider text-on-surface">New</div>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-2">Obsidian Floor Lamp</h3>
+<p class="font-body text-on-surface-variant font-light">$1,200</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group cursor-pointer mt-0 lg:mt-12">
+<div class="w-full aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden">
+<img alt="Related Product 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Abstract geometric dark red and black textured rug on a concrete floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALpu9_nU__2LALithIGvnuNMPTdl4Zj4ojX7s_7hxZwWgPduFXeNQzwxzAWJu2q-sEJb_qrlcadSQXlZutYWIDS89hVTeieUJXtnFpnReC2_zX1T_OLIBxSvy-LULY3K34_GUJCWGucIklEDjYKDOpsPNI6zJsKpoQCbuqG0583Gnos16wKjr5xwEihpKafyE-IWEQPAM-7HD44ZPRKj0MWPXiUQrS4Nuax2y-YQ1KPyk1LfjyYxkXHV5_3ipxaDmzTurcqWgFkAs"/>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-2">Erosion Area Rug</h3>
+<p class="font-body text-on-surface-variant font-light">$850</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group cursor-pointer">
+<div class="w-full aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden">
+<img alt="Related Product 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Dark wooden side table with minimal geometric design in a dimly lit studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhdQf7vJ-8ISCpKmBiL9beBSv32kX_tAsfMR7js8JZea9Mrnq1nk-R4xzOqfMW8ju-TmSFrEZdKYSVPGjsEPhKE-QvmH3PxHGAqnzrGUGadtCLqmTJIYZD74IrYMDLmA8hHkVgTsIIq5Ms7qpUoqMKSGsPa5BxEH52e1rJ3JwOgzfwuo9KUoCC7Bd6NlvpwVaKwltpaJ8sITIofvjhSMinQ0OuIB2ispkgjGaXmy07eZXGsRtD1OCtCxYP_YdxFp3g50plWdkLnCs"/>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-2">Brutalist Side Table</h3>
+<p class="font-body text-on-surface-variant font-light">$1,600</p>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group cursor-pointer mt-0 lg:mt-12">
+<div class="w-full aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden">
+<img alt="Related Product 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Close up of a decorative ceramic bowl with dark matte glaze and red accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiidFdXbM1c3JnEiB4ERX_bktkPH9A6d-K8xs1QctX3VrdrCwyxD02emCpojO3SBwLiiXr65qFkkDKe0-PY4Vgh8COjyLNa0wwIcdj9nKeF_rlQDL4_KtvpukOlX6LvjBHXOC-Slg_5JNNIUZxTPsyvXZue-a9uGHNhRUiewNZNsh0PU4coIewxT3LCJNaBA_Zn9YaB7vsix9Ihllddk2Lsv7nupqX-p_AZkpi9aHW9qZsRv5P5xoFbGOH_3ZFx5CL2oV9NzzxcMM"/>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-2">Vessel No. 4</h3>
+<p class="font-body text-on-surface-variant font-light">$420</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-[#1a0a07] w-full py-16 px-12 mt-auto border-t border-[#5e3f3a]/15 flex flex-col items-center justify-center gap-8 w-full">
+<a class="font-['Epilogue'] font-bold text-[#fedad5] text-2xl tracking-tighter opacity-80 hover:opacity-100 transition-opacity" href="#">
+            CINEMATIC GALLERY
+        </a>
+<div class="flex flex-wrap justify-center gap-8 md:gap-12">
+<a class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#e8bcb5] hover:text-[#ffb4a8] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#e8bcb5] hover:text-[#ffb4a8] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#e8bcb5] hover:text-[#ffb4a8] transition-colors" href="#">Shipping</a>
+<a class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#e8bcb5] hover:text-[#ffb4a8] transition-colors" href="#">Returns</a>
+<a class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#e8bcb5] hover:text-[#ffb4a8] transition-colors" href="#">Contact</a>
+</div>
+<p class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#e8bcb5] opacity-50 mt-4">
+            © 2024 THE CINEMATIC GALLERY. ALL RIGHTS RESERVED.
+        </p>
+</footer>
+</body></html>

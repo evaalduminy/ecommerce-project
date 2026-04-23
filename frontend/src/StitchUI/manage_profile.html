@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile - The Cinematic Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#ffb4a8",
+                        "secondary-fixed": "#ffdad4",
+                        "surface-bright": "#4a3430",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "on-surface-variant": "#e8bcb5",
+                        "on-secondary-container": "#ff9f90",
+                        "tertiary-fixed-dim": "#b5c4ff",
+                        "on-tertiary": "#00297a",
+                        "inverse-surface": "#fedad5",
+                        "primary-container": "#d80000",
+                        "tertiary": "#b5c4ff",
+                        "on-primary": "#690000",
+                        "inverse-on-surface": "#412b28",
+                        "surface-container": "#2e1b17",
+                        "surface-container-low": "#291714",
+                        "inverse-primary": "#c00000",
+                        "on-tertiary-container": "#e9ebff",
+                        "surface": "#200f0c",
+                        "background": "#200f0c",
+                        "surface-dim": "#200f0c",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "outline": "#af8781",
+                        "surface-container-highest": "#452f2c",
+                        "on-tertiary-fixed": "#00174d",
+                        "secondary-container": "#91180e",
+                        "on-tertiary-fixed-variant": "#003dab",
+                        "on-primary-fixed": "#410000",
+                        "secondary-fixed-dim": "#ffb4a8",
+                        "primary-fixed": "#ffdad4",
+                        "primary": "#ffb4a8",
+                        "surface-container-high": "#3a2521",
+                        "on-background": "#fedad5",
+                        "tertiary-container": "#005cfa",
+                        "on-secondary-fixed-variant": "#8d150b",
+                        "on-secondary": "#690000",
+                        "secondary": "#ffb4a8",
+                        "on-primary-container": "#ffe7e3",
+                        "outline-variant": "#5e3f3a",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#1a0a07",
+                        "on-surface": "#fedad5",
+                        "on-primary-fixed-variant": "#930000",
+                        "surface-variant": "#452f2c",
+                        "on-secondary-fixed": "#410000",
+                        "tertiary-fixed": "#dbe1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": [
+                            "Epilogue"
+                        ],
+                        "body": [
+                            "Manrope"
+                        ],
+                        "label": [
+                            "Manrope"
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            font-family: theme('fontFamily.body');
+        }
+        .glass-panel {
+            background-color: rgba(69, 47, 44, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, theme('colors.primary'), theme('colors.primary-container'));
+        }
+        .ambient-shadow {
+            box-shadow: 0px 24px 48px -12px rgba(26, 10, 7, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#200f0c] dark:bg-[#200f0c] no-borders bg-[#291714] shadow-none flex justify-between items-center px-12 h-20 w-full hidden md:flex">
+<div class="font-['Epilogue'] text-2xl font-black tracking-tighter text-[#fedad5]">CINEMATIC GALLERY</div>
+<div class="flex gap-8 font-['Epilogue'] font-bold tracking-tight text-[#fedad5]">
+<a class="text-[#e8bcb5] hover:text-[#fedad5] hover:bg-[#3a2521] transition-colors duration-300 scale-95 duration-150 ease-in-out" href="#">Gallery</a>
+<a class="text-[#e8bcb5] hover:text-[#fedad5] hover:bg-[#3a2521] transition-colors duration-300 scale-95 duration-150 ease-in-out" href="#">Collections</a>
+<a class="text-[#e8bcb5] hover:text-[#fedad5] hover:bg-[#3a2521] transition-colors duration-300 scale-95 duration-150 ease-in-out" href="#">Archive</a>
+<a class="text-[#e8bcb5] hover:text-[#fedad5] hover:bg-[#3a2521] transition-colors duration-300 scale-95 duration-150 ease-in-out" href="#">About</a>
+</div>
+<div class="flex gap-4 text-[#d80000] dark:text-[#ffb4a8]">
+<span class="material-symbols-outlined hover:bg-[#3a2521] transition-colors duration-300 scale-95 duration-150 ease-in-out cursor-pointer" data-icon="shopping_bag">shopping_bag</span>
+<span class="material-symbols-outlined text-[#d80000] border-b-2 border-[#d80000] pb-1 cursor-pointer" data-icon="person">person</span>
+</div>
+</nav>
+<!-- SideNavBar (Mobile / Dashboard layout alternative if needed, but keeping simple for now) -->
+<!-- Content Canvas -->
+<main class="flex-grow pt-32 pb-16 px-6 md:px-12 lg:px-24">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Sidebar Navigation -->
+<aside class="lg:col-span-3">
+<div class="sticky top-32 flex flex-col gap-2">
+<div class="font-headline text-3xl font-bold mb-8 text-on-surface">Account</div>
+<button class="flex items-center gap-4 px-6 py-4 rounded-DEFAULT bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors text-left w-full">
+<span class="material-symbols-outlined text-primary-container" data-icon="person">person</span>
+<span class="font-label font-bold tracking-wide">Profile Settings</span>
+</button>
+<button class="flex items-center gap-4 px-6 py-4 rounded-DEFAULT bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors text-left w-full">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+<span class="font-label font-bold tracking-wide">Security</span>
+</button>
+<button class="flex items-center gap-4 px-6 py-4 rounded-DEFAULT bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors text-left w-full">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label font-bold tracking-wide">Order History</span>
+</button>
+<button class="flex items-center gap-4 px-6 py-4 rounded-DEFAULT bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors text-left w-full">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-label font-bold tracking-wide">Saved Addresses</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<section class="lg:col-span-9 flex flex-col gap-12">
+<!-- Profile Information Card -->
+<div class="bg-surface-container-low p-8 lg:p-12 rounded-lg relative overflow-hidden group hover:bg-surface-container transition-colors duration-500">
+<h2 class="font-headline text-2xl font-bold text-on-surface mb-8">Personal Information</h2>
+<div class="flex flex-col md:flex-row gap-8 mb-8 items-start">
+<div class="relative w-32 h-32 rounded-full overflow-hidden bg-surface-container-highest flex-shrink-0">
+<img alt="User profile portrait in moody studio lighting" class="w-full h-full object-cover" data-alt="Close-up portrait of a person in dark moody cinematic lighting, looking confident, high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAimEa0L_umTTVljMHR7k9Vpbgfwbt-y6_ptp8-mwAXBgICxMRkboCWbeL1At_ARbefxLzsavm0FElWZi5o7SZaRebcUp4RytaHw97ymrjO2r_OrzPk1Zt_rV0QdopNFZMkHTuIzBYEhd4pl5VR9Ngs0KMlGzgu9X2m1oorIzMjNHAKr6pWAaMB7XSRrWoJ1Pkf-cSQIWejXSKtzJv8oxqfvg0swBjTwfEVuRr6BmveWtykKwfZq2Ml_LRycDWQVzKfvq5uodHlIR0"/>
+<button class="absolute bottom-0 inset-x-0 bg-surface-variant/80 text-on-surface text-xs py-1 font-label uppercase tracking-widest hover:text-primary-container transition-colors">Edit</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 flex-grow w-full">
+<div class="flex flex-col">
+<label class="font-label text-sm text-on-surface-variant mb-2">First Name</label>
+<input class="bg-transparent border-0 border-b-2 border-outline-variant text-on-surface font-body p-2 focus:ring-0 focus:border-primary-container transition-colors" type="text" value="Elena"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label text-sm text-on-surface-variant mb-2">Last Name</label>
+<input class="bg-transparent border-0 border-b-2 border-outline-variant text-on-surface font-body p-2 focus:ring-0 focus:border-primary-container transition-colors" type="text" value="Vance"/>
+</div>
+<div class="flex flex-col md:col-span-2">
+<label class="font-label text-sm text-on-surface-variant mb-2">Email Address</label>
+<input class="bg-transparent border-0 border-b-2 border-outline-variant text-on-surface font-body p-2 focus:ring-0 focus:border-primary-container transition-colors" type="email" value="elena.vance@example.com"/>
+</div>
+</div>
+</div>
+<div class="flex justify-end">
+<button class="signature-gradient text-on-primary-container font-headline font-bold text-sm px-8 py-3 rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center gap-2">
+<span>Save Changes</span>
+</button>
+</div>
+</div>
+<!-- Recent Orders Preview (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Security / Password Summary -->
+<div class="bg-surface-container-low p-8 rounded-lg flex flex-col justify-between hover:bg-surface-container transition-colors duration-500">
+<div>
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline text-xl font-bold text-on-surface">Security</h3>
+<span class="material-symbols-outlined text-outline-variant" data-icon="shield">shield</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm mb-6 leading-relaxed">Ensure your account remains secure. Update your password regularly.</p>
+<div class="space-y-4">
+<div class="flex flex-col">
+<label class="font-label text-xs text-on-surface-variant mb-1 uppercase tracking-widest">Current Password</label>
+<input class="bg-transparent border-0 border-b-2 border-outline-variant/30 text-on-surface/50 font-body p-2" disabled="" type="password" value="********"/>
+</div>
+</div>
+</div>
+<button class="mt-8 text-on-surface font-headline text-sm uppercase tracking-widest border border-outline-variant/15 hover:border-outline-variant px-6 py-3 rounded-DEFAULT transition-all self-start">Change Password</button>
+</div>
+<!-- Latest Order Highlight -->
+<div class="bg-surface-container-low p-8 rounded-lg relative overflow-hidden group hover:bg-surface-container transition-colors duration-500 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline text-xl font-bold text-on-surface">Latest Order</h3>
+<span class="material-symbols-outlined text-outline-variant" data-icon="local_shipping">local_shipping</span>
+</div>
+<div class="flex gap-4 items-center">
+<div class="w-20 h-20 bg-surface-container-highest rounded-DEFAULT overflow-hidden flex-shrink-0">
+<img alt="Abstract modern art print" class="w-full h-full object-cover mix-blend-luminosity opacity-80 group-hover:mix-blend-normal group-hover:opacity-100 transition-all duration-500" data-alt="Abstract modern art print with deep reds and blacks in a dark minimal setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj3Xgq1nnx0zwT7g1HULeg5-unXYne5iyIjkmwGPopeBf9E6DR1QFGo8CgoaMo5G4ylQFd_oUq9EcxtrymkgN-7YF_FegakayfaVJRTRyv_lZIUHLRj8YC3YAv7-nNiSv-IdxwnbM-PyBiIGQyfua4F8KDxA-phwR4_YAPfBVIkf9KxIGJ4IXR0gIR672M8oYc_y1jp-wlKOWhLg7iV6qVbLKOpfHJ9QJFPYklyatz61myJ8d82R_fOB68hvpRYHbrXdAT8RiwFXk"/>
+</div>
+<div>
+<div class="font-headline font-bold text-on-surface">Noir Series No. 4</div>
+<div class="font-body text-xs text-on-surface-variant mt-1">Order #ORD-8924</div>
+<div class="font-body text-sm text-primary-container mt-2 font-bold">Shipped</div>
+</div>
+</div>
+</div>
+<button class="mt-8 text-on-surface font-headline text-sm uppercase tracking-widest border border-outline-variant/15 hover:border-outline-variant px-6 py-3 rounded-DEFAULT transition-all self-start flex items-center gap-2">
+<span>View All Orders</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1a0a07] dark:bg-[#1a0a07] w-full py-16 px-12 mt-auto bg-[#200f0c] shadow-none flex flex-col items-center justify-center gap-8 border-t border-[#5e3f3a]/15">
+<div class="font-['Epilogue'] font-bold text-[#fedad5] text-xl">CINEMATIC GALLERY</div>
+<div class="flex gap-6 font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#e8bcb5]">
+<a class="text-[#e8bcb5] hover:text-[#ffb4a8] transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-[#e8bcb5] hover:text-[#ffb4a8] transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-[#e8bcb5] hover:text-[#ffb4a8] transition-colors opacity-80 hover:opacity-100" href="#">Shipping</a>
+<a class="text-[#e8bcb5] hover:text-[#ffb4a8] transition-colors opacity-80 hover:opacity-100" href="#">Returns</a>
+<a class="text-[#e8bcb5] hover:text-[#ffb4a8] transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+<div class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#e8bcb5] opacity-50">
+            © 2024 THE CINEMATIC GALLERY. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>

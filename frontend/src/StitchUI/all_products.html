@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>All Products - The Cinematic Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#ffb4a8",
+                    "secondary-fixed": "#ffdad4",
+                    "surface-bright": "#4a3430",
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#ffb4a8",
+                    "on-surface-variant": "#e8bcb5",
+                    "on-secondary-container": "#ff9f90",
+                    "tertiary-fixed-dim": "#b5c4ff",
+                    "on-tertiary": "#00297a",
+                    "inverse-surface": "#fedad5",
+                    "primary-container": "#d80000",
+                    "tertiary": "#b5c4ff",
+                    "on-primary": "#690000",
+                    "inverse-on-surface": "#412b28",
+                    "surface-container": "#2e1b17",
+                    "surface-container-low": "#291714",
+                    "inverse-primary": "#c00000",
+                    "on-tertiary-container": "#e9ebff",
+                    "surface": "#200f0c",
+                    "background": "#200f0c",
+                    "surface-dim": "#200f0c",
+                    "on-error-container": "#ffdad6",
+                    "error": "#ffb4ab",
+                    "outline": "#af8781",
+                    "surface-container-highest": "#452f2c",
+                    "on-tertiary-fixed": "#00174d",
+                    "secondary-container": "#91180e",
+                    "on-tertiary-fixed-variant": "#003dab",
+                    "on-primary-fixed": "#410000",
+                    "secondary-fixed-dim": "#ffb4a8",
+                    "primary-fixed": "#ffdad4",
+                    "primary": "#ffb4a8",
+                    "surface-container-high": "#3a2521",
+                    "on-background": "#fedad5",
+                    "tertiary-container": "#005cfa",
+                    "on-secondary-fixed-variant": "#8d150b",
+                    "on-secondary": "#690000",
+                    "secondary": "#ffb4a8",
+                    "on-primary-container": "#ffe7e3",
+                    "outline-variant": "#5e3f3a",
+                    "error-container": "#93000a",
+                    "surface-container-lowest": "#1a0a07",
+                    "on-surface": "#fedad5",
+                    "on-primary-fixed-variant": "#930000",
+                    "surface-variant": "#452f2c",
+                    "on-secondary-fixed": "#410000",
+                    "tertiary-fixed": "#dbe1ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Epilogue"
+                    ],
+                    "body": [
+                            "Manrope"
+                    ],
+                    "label": [
+                            "Manrope"
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col pt-20">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#200f0c] dark:bg-[#200f0c] shadow-none flex justify-between items-center px-12 h-20 w-full no-borders bg-[#291714]">
+<div class="flex items-center gap-12">
+<a class="font-['Epilogue'] text-2xl font-black tracking-tighter text-[#fedad5]" href="#">CINEMATIC GALLERY</a>
+<div class="hidden md:flex gap-8">
+<a class="font-['Epilogue'] font-bold tracking-tight text-[#fedad5] text-[#d80000] border-b-2 border-[#d80000] pb-1 scale-95 duration-150 ease-in-out" href="#">Gallery</a>
+<a class="font-['Epilogue'] font-bold tracking-tight text-[#fedad5] text-[#e8bcb5] hover:text-[#fedad5] hover:bg-[#3a2521] transition-colors duration-300 scale-95 duration-150 ease-in-out px-2 py-1 rounded-DEFAULT" href="#">Collections</a>
+<a class="font-['Epilogue'] font-bold tracking-tight text-[#fedad5] text-[#e8bcb5] hover:text-[#fedad5] hover:bg-[#3a2521] transition-colors duration-300 scale-95 duration-150 ease-in-out px-2 py-1 rounded-DEFAULT" href="#">Archive</a>
+<a class="font-['Epilogue'] font-bold tracking-tight text-[#fedad5] text-[#e8bcb5] hover:text-[#fedad5] hover:bg-[#3a2521] transition-colors duration-300 scale-95 duration-150 ease-in-out px-2 py-1 rounded-DEFAULT" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#e8bcb5] hover:text-[#fedad5] transition-colors duration-300 scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="text-[#e8bcb5] hover:text-[#fedad5] transition-colors duration-300 scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow flex w-full relative">
+<!-- Sidebar Filters -->
+<aside class="w-72 hidden lg:flex flex-col flex-shrink-0 bg-surface-container-high min-h-[calc(100vh-5rem)] sticky top-20 p-8 gap-10">
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-6">Category</h3>
+<ul class="space-y-4">
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox bg-surface-container border-outline-variant text-primary-container focus:ring-primary-container rounded-DEFAULT w-5 h-5 transition-colors" type="checkbox"/>
+<span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Prints</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox bg-surface-container border-outline-variant text-primary-container focus:ring-primary-container rounded-DEFAULT w-5 h-5 transition-colors" type="checkbox"/>
+<span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Originals</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox bg-surface-container border-outline-variant text-primary-container focus:ring-primary-container rounded-DEFAULT w-5 h-5 transition-colors" type="checkbox"/>
+<span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Sculpture</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox bg-surface-container border-outline-variant text-primary-container focus:ring-primary-container rounded-DEFAULT w-5 h-5 transition-colors" type="checkbox"/>
+<span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Apparel</span>
+</label>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-6">Price Range</h3>
+<div class="space-y-6">
+<input class="w-full accent-primary-container h-1 bg-surface-container rounded-lg appearance-none cursor-pointer" max="1000" min="0" type="range"/>
+<div class="flex items-center justify-between gap-4">
+<div class="relative w-full">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">$</span>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface pl-7 py-2 transition-colors" placeholder="Min" type="number"/>
+</div>
+<span class="text-on-surface-variant">-</span>
+<div class="relative w-full">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">$</span>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface pl-7 py-2 transition-colors" placeholder="Max" type="number"/>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-6">Rating</h3>
+<div class="flex flex-wrap gap-3">
+<button class="bg-surface-container-highest text-on-surface px-4 py-2 rounded-lg font-label text-sm hover:bg-primary-container hover:text-on-primary-container transition-colors">4+ Stars</button>
+<button class="bg-surface-container-highest text-on-surface px-4 py-2 rounded-lg font-label text-sm hover:bg-primary-container hover:text-on-primary-container transition-colors">3+ Stars</button>
+</div>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-6">Availability</h3>
+<ul class="space-y-4">
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="form-checkbox bg-surface-container border-outline-variant text-primary-container focus:ring-primary-container rounded-DEFAULT w-5 h-5 transition-colors" type="checkbox"/>
+<span class="text-on-surface-variant group-hover:text-on-surface transition-colors">In Stock</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox bg-surface-container border-outline-variant text-primary-container focus:ring-primary-container rounded-DEFAULT w-5 h-5 transition-colors" type="checkbox"/>
+<span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Pre-order</span>
+</label>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Product Grid Area -->
+<section class="flex-grow p-8 lg:p-12 bg-surface-container-low min-h-full">
+<header class="mb-12 flex justify-between items-end">
+<div>
+<h1 class="font-headline text-4xl lg:text-5xl font-black tracking-tight text-on-surface mb-2">The Archive</h1>
+<p class="text-on-surface-variant text-lg">Curated selections from the cinematic universe.</p>
+</div>
+<div class="hidden md:flex items-center gap-4">
+<span class="text-on-surface-variant text-sm uppercase tracking-widest font-bold">Sort By</span>
+<select class="bg-transparent border-0 border-b-2 border-outline-variant text-on-surface focus:ring-0 focus:border-primary-container cursor-pointer font-label pb-1">
+<option class="bg-surface-container" value="newest">Newest Arrivals</option>
+<option class="bg-surface-container" value="price_asc">Price: Low to High</option>
+<option class="bg-surface-container" value="price_desc">Price: High to Low</option>
+</select>
+</div>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-16 gap-x-12">
+<!-- Product Card 1 -->
+<article class="group flex flex-col gap-6">
+<div class="relative w-full aspect-[4/5] bg-surface-container overflow-hidden rounded-lg">
+<img alt="Product Image" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="dramatic lighting on abstract geometric sculpture in dark red studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAivUXmkp26fz5r9kVoINcGEXBPRLXEvi1BdMFspIMOPzy_32r9JdJVQ9FUKkYYKg2vCMQ2RQiblnlC9o3NyLA2UznOu4ELVYekTSeVGheXq8lp6z-eE5Glm7YmfQxbVhHc0lOusahwAGcBuS4Lwu3FORVFxdZlReH4bleyczOgXmH3sm8JZ2PxqG0ZiIEw0qGoPRrmmsKkdEiOI1iFEz1iGZZdIgJ-4ZjCUGB7viQLSj6UbrGEpnPPOQMcv4Lf5u-2x56TbBGWhz8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-DEFAULT font-label uppercase tracking-widest text-sm font-bold shadow-[0_8px_16px_rgba(216,0,0,0.3)] hover:brightness-110">
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline text-xl font-bold text-on-surface mb-1">Crimson Monolith</h2>
+<p class="text-on-surface-variant text-sm">Original Sculpture</p>
+</div>
+<span class="font-body text-lg font-bold text-on-surface">$1,250</span>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="group flex flex-col gap-6">
+<div class="relative w-full aspect-[4/5] bg-surface-container overflow-hidden rounded-lg">
+<img alt="Product Image" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="cinematic close up of oil painting textures in deep reds and blacks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2tLvGx_I_Hu3FnXuAICPcCaStGbFM05W-_lIqK0l4opAjdZyCQHPbFrfXXSFvBo4WOIFQHrbz4j7vVtjbtilvV8iywsDudha5nRVF9EZmlivjm-E7JDaqFTU2KPSxIPrxXH6LyKogwAoqtwx0VBEsiSR0_mlzfGn_7J5M2c_h4xrngob-Jmjx79AKSQlV94lTEPvlsq9dfiiHyY3tdk6-fEG1OXOW_i1Myzyk0NMEDdJcSKWkHkwJ5OmfysI65zakDDMgJFg966U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-DEFAULT font-label uppercase tracking-widest text-sm font-bold shadow-[0_8px_16px_rgba(216,0,0,0.3)] hover:brightness-110">
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline text-xl font-bold text-on-surface mb-1">Void Canvas 04</h2>
+<p class="text-on-surface-variant text-sm">Archival Print</p>
+</div>
+<span class="font-body text-lg font-bold text-on-surface">$320</span>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="group flex flex-col gap-6">
+<div class="relative w-full aspect-[4/5] bg-surface-container overflow-hidden rounded-lg">
+<img alt="Product Image" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="moody dark room with single spotlight illuminating a sleek camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTBNTO1yFDRssvp3HUilNEFAMrHAgXQ_PX9smfucO6aHgureEhiue5_cTWdzLKXmpV_T9H8z5Kv9i1mmJZ_iqQClpP_GINvk_4HdUEhp51boqr3yzUyB8lOSt0mrl6xPry-pzUFNPeGv66Ak-owBONZco0eCStYclm6LVTXjFX6YmI8msDGffjy0AaOj9HGQ2NiCMthBuFrr_PTNBZ5o3HF7-Z9GB2_oPd38mRf6irCTMTrEOEuZiJrWChxABsJNrkN-4H7fccW1c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-DEFAULT font-label uppercase tracking-widest text-sm font-bold shadow-[0_8px_16px_rgba(216,0,0,0.3)] hover:brightness-110">
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline text-xl font-bold text-on-surface mb-1">Director's Lens</h2>
+<p class="text-on-surface-variant text-sm">Vintage Equipment</p>
+</div>
+<span class="font-body text-lg font-bold text-on-surface">$890</span>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="group flex flex-col gap-6 mt-12 lg:mt-24">
+<div class="relative w-full aspect-[4/5] bg-surface-container overflow-hidden rounded-lg">
+<img alt="Product Image" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="abstract architectural shapes in deep shadow with sliver of bright red light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOHnRF8B3EJMi4BFBexsgiGxfHxWQvz3aeqEI5Y7o6sn16Q2n21v8P8jivYYKBlVO_w3mcaT20H7dxb-uF5659TPJVXWXQh1ROmwrUGxIRIt1M1gQ93risv-zzTetK6zpFrloyRWy-hERHTVyHiGlM_vlf0uCRqNqQrVg8iAgx9jTuYIZH7ZjCjbqJ_iqqjN7oD7Rc8seCMia0QhLLbzpoKKbYpsc5X17RW2FdlyGBu6-r0f5__RzEEuFgtvE82Ws_3do5h6a8qOo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-DEFAULT font-label uppercase tracking-widest text-sm font-bold shadow-[0_8px_16px_rgba(216,0,0,0.3)] hover:brightness-110">
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline text-xl font-bold text-on-surface mb-1">Structural Ruin</h2>
+<p class="text-on-surface-variant text-sm">Framed Photography</p>
+</div>
+<span class="font-body text-lg font-bold text-on-surface">$450</span>
+</div>
+</article>
+<!-- Product Card 5 -->
+<article class="group flex flex-col gap-6 mt-12 lg:mt-0">
+<div class="relative w-full aspect-[4/5] bg-surface-container overflow-hidden rounded-lg">
+<img alt="Product Image" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="vintage leather bound book on dark mahogany desk low key lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGw8_DLq3zuz0B9YeOYBgTeqvwQZc5nr0vqaQYdXIdNAwGpygqrFfGOdcZ_o1z9bsayg9IM9yN4jYPojOm_fK10Tk9n1ryTtrLJtN1olgcMBSb7inzRwiYj4ZZEdlCPYQhWvW7mdS5XZRmcJbQWBByvf3aBTT3YfSNZ6rNYyOEK67BsbzF6ndafj2fDNoq8tqnFcKG13tYNnMns0aRChD0EmPD6LHP88m01guMYr6zrdI4qyHHWGCFHDKWOWR0h14ql_5kpTGmEY4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-DEFAULT font-label uppercase tracking-widest text-sm font-bold shadow-[0_8px_16px_rgba(216,0,0,0.3)] hover:brightness-110">
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline text-xl font-bold text-on-surface mb-1">The Script Vault</h2>
+<p class="text-on-surface-variant text-sm">First Edition Folio</p>
+</div>
+<span class="font-body text-lg font-bold text-on-surface">$2,100</span>
+</div>
+</article>
+<!-- Product Card 6 -->
+<article class="group flex flex-col gap-6 mt-12 lg:mt-24">
+<div class="relative w-full aspect-[4/5] bg-surface-container overflow-hidden rounded-lg">
+<img alt="Product Image" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="minimalist black garment hanging on thin metal rack against dark charcoal background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBijC16GIhfF1i50GTLvJLofpHJUPnrBhgXKajs-zWZw2tJkp6cb45rRtwPiTe-a4e6o_nF6T-QG9NAc513gvMhgHqTpshLDo9OumrUH7pibgpzTQaVcAkhDyt0IWDmKUj5Tt_IAnrQiRUglXU69M879Kkp3Aw0S5rfLW5tFwnF1089RPSxzjPNAQuiICkMi5JtlVTW8LSnzRUvSpYu50npvHTLVNQ9zshCncfMV83Sf3zyyCb72AX3fybBSfljuSBQvXZDtnGub2w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-DEFAULT font-label uppercase tracking-widest text-sm font-bold shadow-[0_8px_16px_rgba(216,0,0,0.3)] hover:brightness-110">
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline text-xl font-bold text-on-surface mb-1">Onyx Silhouette</h2>
+<p class="text-on-surface-variant text-sm">Apparel Collection</p>
+</div>
+<span class="font-body text-lg font-bold text-on-surface">$180</span>
+</div>
+</article>
+</div>
+<div class="mt-24 flex justify-center">
+<button class="bg-transparent border border-outline-variant/30 text-on-surface px-8 py-4 uppercase tracking-[0.1em] font-bold text-sm hover:border-outline-variant hover:bg-surface-container transition-all duration-300">
+                    Load More Archive
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1a0a07] dark:bg-[#1a0a07] w-full py-16 px-12 mt-auto border-t border-[#5e3f3a]/15 flex flex-col items-center justify-center gap-8 shadow-none">
+<a class="font-['Epilogue'] font-bold text-[#fedad5] text-xl" href="#">CINEMATIC GALLERY</a>
+<div class="flex gap-8">
+<a class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#e8bcb5] text-[#e8bcb5] hover:text-[#ffb4a8] transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#e8bcb5] text-[#e8bcb5] hover:text-[#ffb4a8] transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#e8bcb5] text-[#e8bcb5] hover:text-[#ffb4a8] transition-colors opacity-80 hover:opacity-100" href="#">Shipping</a>
+<a class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#e8bcb5] text-[#e8bcb5] hover:text-[#ffb4a8] transition-colors opacity-80 hover:opacity-100" href="#">Returns</a>
+<a class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#e8bcb5] text-[#e8bcb5] hover:text-[#ffb4a8] transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+<p class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#e8bcb5] opacity-50">© 2024 THE CINEMATIC GALLERY. ALL RIGHTS RESERVED.</p>
+</footer>
+</body></html>
