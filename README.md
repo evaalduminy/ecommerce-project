@@ -100,4 +100,4 @@ The project follows a **Premium Dark Aesthetic**:
 
 ## 📄 License
 
-This project is for educational and showcase purposes. Developed with ❤️ by Antigravity.
+This project is for educational and showcase purposes. Developed with ❤️ by Hawa saleh (EVE).
