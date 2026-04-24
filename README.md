@@ -25,8 +25,8 @@ Crimson Marketplace is a state-of-the-art, multi-vendor eCommerce platform built
 
 ### 🖼️ Cloud & Media
 
-- **Cloudinary Integration**: Blazing fast image uploads and optimized delivery.
-- **Auto-Optimization**: Images are automatically resized and compressed on the fly.
+- **Firebase Storage Integration**: Secure and globally accessible image storage.
+- **Auto-Optimization**: Images are optimized for fast delivery and high performance.
 
 ### 📧 Communication
 
@@ -41,7 +41,7 @@ Crimson Marketplace is a state-of-the-art, multi-vendor eCommerce platform built
 | **Frontend** | Next.js 15, Tailwind CSS, Shadcn/UI, Recharts, Framer Motion |
 | **Backend**  | Node.js, Express.js, JWT (Cookie-based auth)                 |
 | **Database** | MongoDB + Mongoose                                           |
-| **Media**    | Cloudinary API                                               |
+| **Media**    | Firebase Storage                                             |
 | **Payments** | Stripe API                                                   |
 | **Emails**   | Resend API                                                   |
 

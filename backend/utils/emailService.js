@@ -34,7 +34,7 @@ const sendOrderEmail = async (to, order, type) => {
   try {
     const htmlOutput = getOrderEmailTemplate(order, type);
     await resend.emails.send({
-      from: 'Crimson Market <orders@crimson-market.com>', // Subject to custom domain verification
+      from: 'onboarding@resend.dev', // Use this for testing until you verify your domain
       to: to,
       subject: `Crimson Market - Order ${order._id.toString().substring(0, 8)} Update`,
       html: htmlOutput

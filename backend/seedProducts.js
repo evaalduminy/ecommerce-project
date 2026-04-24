@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const bcrypt = require('bcryptjs');
-dotenv.config();
+dotenv.config({ path: './backend/.env' });
 
 const User = require('./models/User');
 const Vendor = require('./models/Vendor');
@@ -52,10 +52,7 @@ const productsByCategory = {
 async function seedProducts() {
   try {
     await mongoose.connect(process.env.MONGO_URI, {
-      tls: true,
-      tlsAllowInvalidCertificates: true,
-      tlsInsecure: true,
-      directConnection: true
+      tls: true
     });
     console.log('✅ Connected to MongoDB');
 
